@@ -57,7 +57,11 @@
                 "settings": {
                     "bundleName": "hexathon.emotionsreport.i18n.i18n"
                 }
-            }
+            },
+						"emotionData": {
+							"type": "sap.ui.model.json.JSONModel",
+							"uri": "StackList.json"
+						}
         },
         "resources": {
             "css": [

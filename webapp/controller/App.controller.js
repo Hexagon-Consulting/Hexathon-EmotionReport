@@ -10,7 +10,7 @@ sap.ui.define([
 
         return Controller.extend("hexathon.emotionsreport.controller.App", {
             onInit: function () {
-
+								this.getData();
                 var object = {
                     "stackedColumn": {
                         "sap.app": {
@@ -23,13 +23,13 @@ sap.ui.define([
                                 "type": "Numeric",
                                 "data": {
                                     "json": {
-                                        "n": "43.2",
+                                        "n": "89.2",
                                         "u": "%",
-                                        "trend": "Down",
+                                        "trend": "Up",
                                         "valueColor": "Good"
                                     }
                                 },
-                                "title": "Failure Breakdown - Q1, 2019",
+                                "title": "Hapiness percentage by March",
                                 "mainIndicator": {
                                     "number": "{n}",
                                     "unit": "{u}",
@@ -65,24 +65,52 @@ sap.ui.define([
                                     "json": {
                                         "list": [
                                             {
-                                                "Category": "Weather",
-                                                "Revenue": 431000.22,
-                                                "Cost": 230000,
-                                                "Target": 500000,
+                                                "Category": "Happy",
+                                                "Morning": 14,
+                                                "Noon": 50,
+                                                "Afternoon": 83,
+                                                "Budget": 210000
+                                            },
+																						{
+																							"Category": "Neutral",
+																							"Morning": 2,
+																							"Noon": 5,
+																							"Afternoon": 8,
+																							"Budget": 224000
+																						},
+                                            {
+                                                "Category": "Sad",
+                                                "Morning": 0,
+                                                "Noon": 4,
+                                                "Afternoon": 21,
                                                 "Budget": 210000
                                             },
                                             {
-                                                "Category": "Mechanics",
-                                                "Revenue": 494000.3,
-                                                "Cost": 238000,
-                                                "Target": 500000,
-                                                "Budget": 224000
+                                                "Category": "Angry",
+                                                "Morning": 4,
+                                                "Noon": 3,
+                                                "Afternoon": 0,
+                                                "Budget": 210000
                                             },
                                             {
-                                                "Category": "Software",
-                                                "Revenue": 491000.17,
-                                                "Cost": 221000,
-                                                "Target": 500000,
+                                                "Category": "Fearful",
+                                                "Morning": 5,
+                                                "Noon": 2,
+                                                "Afternoon": 2,
+                                                "Budget": 210000
+                                            },
+                                            {
+                                                "Category": "Disgusted",
+                                                "Morning": 2,
+                                                "Noon": 0,
+                                                "Afternoon": 0,
+                                                "Budget": 210000
+                                            },
+                                            {
+                                                "Category": "Surprised",
+                                                "Morning": 7,
+                                                "Noon": 1,
+                                                "Afternoon": 0,
                                                 "Budget": 238000
                                             }
                                         ]
@@ -97,16 +125,16 @@ sap.ui.define([
                                 ],
                                 "measures": [
                                     {
-                                        "label": "Revenue",
-                                        "value": "{Revenue}"
+                                        "label": "Morning",
+                                        "value": "{Morning}"
                                     },
                                     {
-                                        "label": "Cost",
-                                        "value": "{Cost}"
+                                        "label": "Noon",
+                                        "value": "{Noon}"
                                     },
                                     {
-                                        "label": "Target",
-                                        "value": "{Target}"
+                                        "label": "Afternoon",
+                                        "value": "{Afternoon}"
                                     }
                                 ]
                             }
@@ -120,7 +148,7 @@ sap.ui.define([
                         "sap.card": {
                             "type": "Analytical",
                             "header": {
-                                "title": "Weather Failures"
+                                "title": "Gender distribution of Hapiness"
                             },
                             "content": {
                                 "chartType": "Donut",
@@ -144,28 +172,12 @@ sap.ui.define([
                                     "json": {
                                         "measures": [
                                             {
-                                                "measureName": "Storm Wind",
-                                                "value": 1564235.29
+                                                "measureName": "Female hapiness",
+                                                "value": 76
                                             },
                                             {
-                                                "measureName": "Storm Wind",
-                                                "value": 157913.07
-                                            },
-                                            {
-                                                "measureName": "Rain",
-                                                "value": 1085567.22
-                                            },
-                                            {
-                                                "measureName": "Rain",
-                                                "value": 245609.486884
-                                            },
-                                            {
-                                                "measureName": "Temperature",
-                                                "value": 345292.06
-                                            },
-                                            {
-                                                "measureName": "Temperature",
-                                                "value": 82922.07
+                                                "measureName": "Male hapiness",
+                                                "value": 73
                                             }
                                         ]
                                     },
@@ -281,7 +293,7 @@ sap.ui.define([
                         "sap.card": {
                             "type": "List",
                             "header": {
-                                "title": "Incidents in the last 24 hours",
+                                "title": "Emotions on March to help improve",
                                 "status": {
                                     "text": "3 of 3"
                                 }
@@ -290,24 +302,24 @@ sap.ui.define([
                                 "data": {
                                     "json": [
                                         {
-                                            "name": "Teico Inc.",
+                                            "name": "Sadness",
                                             "icon": "./test-resources/sap/ui/integration/demokit/sample/CardsLayout/images/Case1.png",
-                                            "description": "Sun Valley, Idaho",
-                                            "info": "2456",
-                                            "infoState": "Error"
+                                            "description": "More common at the Afternoon",
+                                            "info": "20 felt sad",
+                                            "infoState": "None"
                                         },
                                         {
-                                            "name": "Freshhh LTD.",
+                                            "name": "Fear",
                                             "icon": "./test-resources/sap/ui/integration/demokit/sample/CardsLayout/images/Case2.png",
-                                            "description": "Dayville, Oregon",
-                                            "info": "1264",
-                                            "infoState": "Warning"
+                                            "description": "More common at the Morning",
+                                            "info": "7 felt fearful",
+                                            "infoState": "None"
                                         },
                                         {
-                                            "name": "Lean Pulp",
+                                            "name": "Angry",
                                             "icon": "./test-resources/sap/ui/integration/demokit/sample/CardsLayout/images/Case3.png",
-                                            "description": "Raymond, Callifornia",
-                                            "info": "236",
+                                            "description": "More common at Noon",
+                                            "info": "12 felt angry",
                                             "infoState": "None"
                                         }
                                     ]
@@ -789,6 +801,43 @@ sap.ui.define([
                 var oModel = new JSONModel(object);
                 this.getView().setModel(oModel, "manifests");
 
-            }
+            },
+						getData: function() {
+							var settings = {
+								"url": "https://api.appery.io/rest/1/apiexpress/api/People?apiKey=6a7d771a-2d3e-4348-b3e6-de8938ec96f2",
+								"method": "GET",
+								"timeout": 0,
+								"headers": {
+									"Content-Type": "application/json"
+								},
+							};
+							$.ajax(settings)
+							.done(function (response) {
+								// debugger;
+								console.log('RESPONSE:',response);
+								this.prepareInformation(response);
+							}.bind(this));
+						},
+
+						prepareInformation: function(response){
+							response.json().then(json => {
+								var totalAmount = json.length;
+								var happyAmount = json.filter(e => e.expressions === "happy").length	// id, gender
+								var sadAmount = json.filter(e => e.expressions === "sad").length	// id, gender
+								var angryAmount = json.filter(e => e.expressions === "angry").length	// id, gender
+								var neutralAmount = json.filter(e => e.expressions === "neutral").length	// id, gender
+								var surprisedAmount = json.filter(e => e.expressions === "surprised").length	// id, gender
+								var fearfulAmount = json.filter(e => e.expressions === "fearful").length	// id, gender
+								var disgustedAmount = json.filter(e => e.expressions === "disgusted").length	// id, gender
+								console.log('Amounts:',totalAmount);
+							});
+						//	this.setEmotionModel(<objeto>);
+						},
+
+						setEmotionModel: function(object){
+							var objeto = {};
+
+							this.getView().getModel('emotionData').setData(objeto);
+						}
         });
     });

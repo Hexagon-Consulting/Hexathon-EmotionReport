@@ -4,22 +4,6 @@
 	xmlns:f="sap.f"
 	xmlns:w="sap.ui.integration.widgets"
 	xmlns:cssgrid="sap.ui.layout.cssgrid">
-	<f:ShellBar
-		title="Drone Hive"
-		secondTitle="{/date}"
-		homeIcon="{/homeIconUrl}"
-		showCopilot="true"
-		showSearch="true"
-		showNotifications="true"
-		showProductSwitcher="true"
-		notificationsNumber="2"
-		class="sapUiSmallMarginTop sapUiSmallMarginBegin">
-		<f:menu>
-			<Menu>
-				<MenuItem text="Drone Hive" icon="{/homeIconUrl}" />
-			</Menu>
-		</f:menu>
-	</f:ShellBar>
 	<IconTabBar
 		id="idIconTabBar"
 		select="handleIconTabBarSelect"
@@ -28,7 +12,7 @@
 		<items>
 			<IconTabFilter text="Home">
 				<Title
-					text="Incidents"
+					text="Emotional data"
 					titleStyle="H2"
 					class="sapUiSmallMarginBottom sapUiSmallMarginTop sapUiSmallMarginBegin" />
 				<f:GridContainer>
@@ -53,11 +37,11 @@
 							<f:GridContainerItemLayoutData columns="4" />
 						</w:layoutData>
 					</w:Card>
-					<w:Card manifest="{manifests>/list2}"  baseUrl="./" action="onAction">
+					<!-- <w:Card manifest="{manifests>/list2}"  baseUrl="./" action="onAction">
 						<w:layoutData>
 							<f:GridContainerItemLayoutData columns="4" />
 						</w:layoutData>
-					</w:Card>
+					</w:Card> -->
 				</f:GridContainer>
 			</IconTabFilter>
 		</items>

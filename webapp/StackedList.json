@@ -1,0 +1,102 @@
+{
+	"stackedColumn": {
+		"sap.app": {
+				"id": "sample.CardsLayout.model.Analytical",
+				"type": "card"
+		},
+		"sap.card": {
+				"type": "Analytical",
+				"header": {
+						"type": "Numeric",
+						"data": {
+								"json": {
+										"n": "43.2",
+										"u": "%",
+										"trend": "Down",
+										"valueColor": "Good"
+								}
+						},
+						"title": "Failure Breakdown - Q1, 2019",
+						"mainIndicator": {
+								"number": "{n}",
+								"unit": "{u}",
+								"trend": "{trend}",
+								"state": "{valueColor}"
+						}
+				},
+				"content": {
+						"chartType": "StackedColumn",
+						"legend": {
+								"visible": true,
+								"position": "Bottom",
+								"alignment": "Left"
+						},
+						"plotArea": {
+								"dataLabel": {
+										"visible": false,
+										"showTotal": false
+								},
+								"categoryAxisText": {
+										"visible": false
+								},
+								"valueAxisText": {
+										"visible": false
+								}
+						},
+						"title": {
+								"visible": false
+						},
+						"measureAxis": "valueAxis",
+						"dimensionAxis": "categoryAxis",
+						"data": {
+								"json": {
+										"list": [
+												{
+														"Category": "Sad",
+														"Morning": 431000.22,
+														"Cost": 230000,
+														"Target": 500000,
+														"Budget": 210000
+												},
+												{
+														"Category": "Happy",
+														"Morning": 494000.3,
+														"Cost": 238000,
+														"Target": 500000,
+														"Budget": 224000
+												},
+												{
+														"Category": "Surprised",
+														"Morning": 491000.17,
+														"Cost": 221000,
+														"Target": 500000,
+														"Budget": 238000
+												}
+										]
+								},
+								"path": "/list"
+						},
+						"dimensions": [
+								{
+										"label": "Categories",
+										"value": "{Category}"
+								}
+						],
+						"measures": [
+								{
+										"label": "Morning",
+										"value": "{Morning}"
+								},
+								{
+										"label": "Cost",
+										"value": "{Cost}"
+								},
+								{
+										"label": "Target",
+										"value": "{Target}"
+								}
+						]
+				}
+		}
+	}
+}
